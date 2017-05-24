@@ -1,0 +1,22 @@
+input{
+	display: block;
+	width: 20%;
+	padding-bottom: 5px;
+	margin-left: 5px;
+}
+
+#waldKont{
+	display: none;
+}
+#landKont{
+	display: none;
+}
+#stadtKont{
+	display: none;
+}
+#wetterKont{
+	display: none;
+}
+#instrKont{
+	display: none;
+}
