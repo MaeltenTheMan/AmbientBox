@@ -6,30 +6,82 @@
 		<title>AmbientBox</title>
 		<link rel="stylesheet" href="style.css"/>
 		<script src="scripts.js"></script>
-		<script src="mqttws31.js"></script>
-			<script type="text/javascript">
-			client = new Paho.MQTT.Client();
+		<script src="mqttws31.js" type="text/javascript"></script>
+		<script type="text/javascript">
 			
+		// Create a client instance
+		var wsbroker = "broker.mqttdashboard.com";  //mqtt websocket enabled broker
+		var wsport = 8000 // port for above
+		var client = new Paho.MQTT.Client(wsbroker, wsport,
+			"myclientid_" + parseInt(Math.random() * 100, 10));
+		client.onConnectionLost = function (responseObject) {
+		console.log("connection lost: " + responseObject.errorMessage);
+		};
+		client.onMessageArrived = function (message) {
+		console.log(message.destinationName, ' -- ', message.payloadString);
+		};
+		var options = {
+		timeout: 3,
+		onSuccess: function () {
+        console.log("mqtt connected");
+        // Connection succeeded; subscribe to our topic, you can add multile lines of these
+        client.subscribe('/haw/dmi/mt/its/ss17/ambientbox', {qos: 0});
+    
+        //use the below if you want to publish to a topic on connect
+        message = new Paho.MQTT.Message("start_Seq 50");
+        message.destinationName = "/haw/dmi/mt/its/ss17/ambientbox";
+        client.send(message);
+  
+		},
+		onFailure: function (message) {
+        console.log("Connection failed: " + message.errorMessage);
+		}
+		};
+
+		function init() {
+		client.connect(options);
+		}
+			
+			/*
 			client.onConnectionLost = onConnectionLost;
 			client.onMessageArrived = onMessageArrived;
 			
+			client.connect({onSuccess:onConnect});
+			
+			function onConnect(){
+			console.log("onConnect");
+			client.subscribe("World");
+			message = new Paho.MQTT.Message("Hello");
+			message.destinationName = "World";
+			client.send(message);
+			}
+			
+			function onConnectionLost(responseObject) {
+			if (responseObject.errorCode !== 0) {
+			console.log("onConnectionLost:"+responseObject.errorMessage);
+			}
+			}
+			
+			function onMessageArrived(message) {
+			console.log("onMessageArrived:"+message.payloadString);
+			}
+			*/
 			function sliderChange(value, id){
-			var send = id + " volume=" + value;
+			var send = id + " " + value;
 			document.getElementById("sliderStatus").innerHTML = send;
-			return send;
+			message = new Paho.MQTT.Message(send);
+			message.destinationName = "/haw/dmi/mt/its/ss17/ambientbox";
+			client.send(message);
 			}
 			
 			</script>
 			
 	</head>
-	<body>
+	<body onload="init();">
 		<div id="divWald">
 			<h1  id="waldH1" onclick="div_hide_show('waldKont')">Wald</h1>
 			<div id="waldKont">
 				Atmosphaere<input type="range" id="wald_Atmosphaere" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
-				<br/ ><br />
-				Slider Value = <span id="sliderStatus">0</span>
-				<br/>
 				Kuckuck<input type="range" id="wald_Kukuck" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				Eule<input type="range" id="wald_Eule" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				Specht<input type="range" id="wald_Specht" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
