@@ -17,3 +17,13 @@ function div_hide_show(id){
 	}
 }
 
+function showRegler(id){
+	
+	window.alert(id);
+	/*
+	if(id == "imgManuell"){
+		actualDiv.style.display = "block";
+	}
+	//if(actualDiv.id)
+}*/
+}
