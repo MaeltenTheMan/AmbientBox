@@ -20,7 +20,7 @@ class Mixer:
             if arguments[0].lower() == "reset":
                 reset()
         else:
-            sound = arguments[0]
+            sound = "audio/" + arguments[0]
             volume = arguments[1]
             if self.checkfile(sound) and self.checkvolume(volume):
                 sound = sound + ".wav"
