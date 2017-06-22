@@ -5,12 +5,13 @@ input{
 	padding-bottom: 5px;
 }
 
-.regler<input{
+.regler>sinput{
 	margin-left: 10%;
 	margin-right: 10%;
 }
 
 #imageDiv{
+	diaplay: none;
 	width:100%;
 	height:auto;
 	/*position:relative;*/
@@ -37,7 +38,7 @@ width:20.5%;
 #regler{
 	display:box;
 	position:static;
-	background-color:green;
+
 }
 
 /*
