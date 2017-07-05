@@ -1,6 +1,13 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
 input{
-	/*position:relative;*/
-	display: block;
+	position:static;
+	
 	width: 20%;
 	padding-bottom: 5px;
 }
@@ -8,12 +15,13 @@ input{
 .regler<input{
 	margin-left: 10%;
 	margin-right: 10%;
+	display: none;
 }
 
 #imageDiv{
 	width:100%;
 	height:auto;
-	/*position:relative;*/
+	position:static;
 	background-color:red;
 }
 
@@ -35,9 +43,9 @@ width:20.5%;
 }
 
 #regler{
-	display:box;
+	display:none;
 	position:static;
-	background-color:green;
+	background-color:white;
 }
 
 /*
@@ -88,3 +96,13 @@ width:20.5%;
 text-align:center;
 }	
 
+
+@media screen and (max-width: 768px){
+	
+	
+	
+	
+	.slides{
+		width:100%;
+	}
+}
