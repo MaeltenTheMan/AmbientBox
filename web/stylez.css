@@ -1,8 +1,14 @@
+/*
+*
+*Allgemein
+*
+*/
+
 *{
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: Helvetica, Arial;
+	font-family:Verdana, Geneva, sans-serif;
 }
 
 body{
@@ -50,7 +56,7 @@ header{
 }
 
 button{
-	font-family: Helvetica, Arial;
+	font-family:Verdana, Geneva, sans-serif;
 	font-weight:bold;
 	background-color: yellow;
 	font-size:45px;
@@ -61,7 +67,8 @@ button{
 }
 
 button:hover{
-	height: 125px
+	color: black;
+	font-size: 400%;
 }
 
 #Button_Wald {
@@ -80,56 +87,83 @@ button:hover{
 	background: url(pics/image-instrumental.jpg);
 }
 
+input{
+	width: 50%;
+	float:left;
+	margin-right: 2%;
+	margin-top:1%;	
+}
+
+p{
+	float: left;
+	margin-top:1%;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+/*
+*presets
+*/
+.presets1, .presets2{
+	float:left;
+	width: 32.6%;
+	height:50px;
+	border-radius: 0px 0px 0px 0px;
+	margin-top: 1%;
+	margin-bottom: 2%;
+	margin-right:1%;
+	font-size: 200%;
+}
+
+.presets1{
+	background-color: blue;
+}
+
+.presets3{
+	float:left;
+	width: 32.6%;
+	height:50px;
+	border-radius: 0px 0px 0px 0px;
+	margin-top: 1%;
+	margin-bottom: 2%;
+	background-color: red;
+	font-size: 200%;
+}
+
+.presets1:hover, .presets2:hover, .presets3:hover{
+	font-size: 250%;
+}
+
 /*
 *
-*Kontroller der einzigen Settings
+*Display none der Konditionen
 *
 */
 #waldKont{
 	display: none;
+	margin-top:1%;
 }
 #landKont{
 	display: none;
+	margin-top:1%;
 }
 #stadtKont{
 	display: none;
+	margin-top:1%;
 }
 #wetterKont{
 	display: none;
+	margin-top:1%;
 }
 #instrKont{
 	display: none;
+	margin-top:1%;
 }
 
-form label, form input{
-	
-	float:left;
-	display: inline;
-	/*margin-right: 10%;
-	color:red;
-	float:left;
-	background-color: red;
-	text-align: 
-	
-	*/
-}
-input{
-	
-	position:static;
-	
-	
-	padding-bottom: 5px;
-	
-}
-
-label{
-	width: 10%;
-	text-align: left;
-}
-
-
-
-
+/*
+*
+*Media Query 768 px (Tablet/Handy)
+*
+*/
 @media screen and (max-width: 768px){
 	
 	.one-fourth{
@@ -140,15 +174,14 @@ label{
 	text-align:center;
 	margin-left: 5%;
 	background: #FFFFFF;
-}
+	}
 	#wilkommenstext{
 	font-weight: 400;
 	font-size: 3.5em;
-}
+	}
 	#uText{
 	font-size: 1.15em;
 	font-weight: 200;
-}
+	}
 
 }
-
