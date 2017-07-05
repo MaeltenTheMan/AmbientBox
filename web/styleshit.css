@@ -12,13 +12,14 @@ input{
 	padding-bottom: 5px;
 }
 
-.regler<input{
+.regler>sinput{
 	margin-left: 10%;
 	margin-right: 10%;
 	display: none;
 }
 
 #imageDiv{
+	diaplay: none;
 	width:100%;
 	height:auto;
 	position:static;
@@ -45,7 +46,11 @@ width:20.5%;
 #regler{
 	display:none;
 	position:static;
+<<<<<<< HEAD:web/styleshit.css
 	background-color:white;
+=======
+
+>>>>>>> 99d7209816e7d0fc7232c78ddcff1be1fa3d108b:web/styles.css
 }
 
 /*

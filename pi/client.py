@@ -28,7 +28,7 @@ class Client:
         payload = msg.payload.decode('utf-8')
         print("\nReceived new message: " + payload)
         arguments = payload.split()
-        if len(arguments) == 2:
-            self.mixer.play(arguments[0], arguments[1])
+        if len(arguments) <= 2:
+            self.mixer.play(arguments)
         else:
-            print("Message invalid: Needs to contain exactly 2 arguemtents")
+            print("Message invalid: Needs to contain exactly 1 or 2 arguemtents")

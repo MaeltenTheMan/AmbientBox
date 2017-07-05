@@ -15,28 +15,34 @@ class Mixer:
     # Changes a sound to play in the given volume.
     # If the sound is not played yet, playback is started
     # If the volume is 0, playback will be stopped and the channel removed
-    def play(self, sound, volume):
-        if self.checkfile(sound) and self.checkvolume(volume):
-            sound = sound + ".wav"
-            volume = float(volume)
-            volume /= 100
-            if volume == 0:
-                if sound in self.channels:
-                    self.channels[sound].stop()
-                    del self.channels[sound]
-                    print("Stopped playback and removed " + sound + " from channels")
-                else:
-                    print("Can't stop playback or remove " + sound + " from channels: Has no channel yet")
-            else: 
-                if sound in self.channels:
-                    self.channels[sound].set_volume(volume)
-                    print("Changing the volume of channel " + sound + " to " + str(volume))
-                else:
-                    newsound = self.mixer.Sound(sound)
-                    newsound.set_volume(volume)
-                    newsound.play(-1)
-                    self.channels[sound] = newsound
-                    print("Created new channel for " + sound + " and set volume to " + str(volume))
+    def play(self, arguments):
+        if len(arguments) == 1:
+            if arguments[0].lower() == "reset":
+                reset()
+        else:
+            sound = "audio/" + arguments[0]
+            volume = arguments[1]
+            if self.checkfile(sound) and self.checkvolume(volume):
+                sound = sound + ".wav"
+                volume = float(volume)
+                volume /= 100
+                if volume == 0:
+                    if sound in self.channels:
+                        self.channels[sound].stop()
+                        del self.channels[sound]
+                        print("Stopped playback and removed " + sound + " from channels")
+                    else:
+                        print("Can't stop playback or remove " + sound + " from channels: Has no channel yet")
+                else: 
+                    if sound in self.channels:
+                        self.channels[sound].set_volume(volume)
+                        print("Changing the volume of channel " + sound + " to " + str(volume))
+                    else:
+                        newsound = self.mixer.Sound(sound)
+                        newsound.set_volume(volume)
+                        newsound.play(-1)
+                        self.channels[sound] = newsound
+                        print("Created new channel for " + sound + " and set volume to " + str(volume))
     
     # Checks if a given filename exists as a .wav file
     def checkfile(self, filename):
@@ -57,3 +63,13 @@ class Mixer:
             print ("Error: " + str(value) + " is not a value between 0 and 100")
             return False
         return True
+    
+    def reset(self):
+        count = 0
+        for channel in self.channels:
+            self.channels[channel].stop()
+            print("Stopped playback of " + channel)
+            count = count + 1
+        print("Stopped playback of " + str(count) + " channels")
+        self.channels.clear()
+        print("All channels cleared. Reset complete")

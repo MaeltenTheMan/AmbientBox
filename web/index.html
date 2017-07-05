@@ -58,16 +58,16 @@
 	</head>
 	<body onload="init();">
 		<div id="wilkommensDiv">
-			<h1 id="wilText" class="home">Herzlich Wilkommen zur Ambientbox</h1>
+			<h1 id="wilText" class="home">Ambientbox</h1>
 			<h4 id="uText" class="home">DISCOVER THE SOUNDTRACK OF YOUR LIFE</h4>
 		</div>
 		
-		<div id="imageDiv">
+		<!--<div id="imageDiv">
 			<input type="image" class="slides" id="imgManuell" src="pics/Manuell.png" onclick="showRegler('Alarm')">
 			<input type="image" class="slides" id="imgLand" src="pics/Land2.png">
 			<input type="image" class="slides" id="imgWald" src="pics/Wald.png">
 			<input type="image" class="slides" id="imgStadt" src="pics/Stadt.png">
-		</div>
+		</div>-->
 		<div id="regler">
 			<div id="divWald">
 				<h1  id="waldH1" onclick="div_hide_show('waldKont')">Wald</h1>
@@ -93,7 +93,7 @@
 				<h1 id="landH1"onclick="div_hide_show('landKont')">Land</h1>
 					<div id="landKont">
 						Atmosphaere<input type="range" id="land_Atmosphaere" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
-						Grillenzirpen<input type="range" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
+						Grillenzirpen<input type="range" id="land_Grillenzirpen" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 						Hunde<input type="range" id="land_Hunde" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 						Katze<input type="range" id="land_Katze" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 						Wasser<input type="range" id="land_Wasser" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
