@@ -4,13 +4,12 @@
 		<meta charset="utf8">
 		<meta name="viewport" content="width=device-width" ,"initial-scale=1">
 		<title>Ambientbox</title>
-		<link rel="stylesheet" type="text/css" href="stylez.css"/>
+		<link rel="stylesheet" type="text/css" href="stylez445.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
-		<script src="scripte2.js"></script>
+		<script src="scripte123.js"></script>
 		<script src="mqttws31.js" type="text/javascript"></script>
 		<script type="text/javascript">
-	
-				
+		
 		// Create a client instance
 		var wsbroker = "broker.mqttdashboard.com";  //mqtt websocket enabled broker
 		var wsport = 8000 // port for above
@@ -43,13 +42,15 @@
 		function init() {
 		client.connect(options);
 		}
-			
+		
 		function sliderChange(value, id){
 		var send = id + " " + value;
 		document.getElementById("sliderStatus").innerHTML = send;
 		message = new Paho.MQTT.Message(send);
 		message.destinationName = "haw/dmi/mt/its/ss17/ambientbox";
 		client.send(message);
+		window.alert(value, id);
+		
 		}
 		</script>
 	
@@ -59,56 +60,50 @@
 		<header>
 			<h1 id="wilkommenstext" class="home">Ambientbox</h1>
 			<h4 id="uText" class="home">Discover the soundtrack of your life</h4>
+				<p id="sliderStatus">Hallo<p>
 		</header>
 		<section class="one-fourth" id="wald">
-			<button id="Button_Wald" onclick="changeButton('Button_Wald');div_hide_show('waldKont')">Wald</button>
+			<button id="Button_Wald" onclick="div_hide_show('waldKont')">Wald</button>
 			<div id="waldKont">
 				
-				<button class="presets1" id="pW1" onclick="gimmePS('pW1')">1</button>
-				<button class="presets2" id="pW2" onclick="gimmePS('pW2')">2</button>
-				<button class="presets3" id="pW3" onclick="gimmePS('pW3')">3</button>
+				<button class="presets1" id="pW1" onclick="gimmePS(this.id)">Instrumente</button>
+				<button class="presets2" id="pW2" onclick="gimmePS(this.id)">Wetter</button>
+				<button class="presets3" id="pW3" onclick="gimmePS(this.id)">Allg</button>
 				
+				<input type="range" id="wald_Atmosphaere" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
+				<p>Atmosphaere</p>
 				<input type="range" id="wald_Kuckuck" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Kukuck</p>	
-				
 				<input type="range" id="wald_Eule" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Eule</p>
 				<input type="range" id="wald_Specht" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Specht</p>
-				
 				<input type="range" id="wald_Wolf" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Wolf</p>
-				
 				<input type="range" id="wald_Aeste" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Aeste</p>
-				
 				<input type="range" id="wald_Laub" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Laub</p>
-				
 				<input type="range" id="wald_Fallobst" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Fallobst</p>
-				
 				<input type="range" id="wald_Frosch" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Frosch</p>
-				
 				<input type="range" id="wald_See" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>See</p>
-				
 				<input type="range" id="wald_Tiergetrappel" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Tiergetrappel</p>
-				
 				<input type="range" id="wald_Tropfen" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Tropfen</p>	
 			</div>
 		</section>
 		
 		<section class="one-fourth" id="stadt">
-			<button id="Button_Stadt" onclick="changeButton('Button_Stadt');div_hide_show('stadtKont');">Stadt</button>	
+			<button id="Button_Stadt" onclick="div_hide_show('stadtKont');">Stadt</button>	
 			<div id="stadtKont">
 			
-				<button class="presets1" id="pS1" onclick="gimmePS('pS1')">1</button>
-				<button class="presets2" id="pS2" onclick="gimmePS('pS2')">2</button>
-				<button class="presets3" id="pS3" onclick="gimmePS('pS3')">3</button>
+				<button class="presets1" id="pS1" onclick="gimmePS(this.id)">Instrumente</button>
+				<button class="presets2" id="pS2" onclick="gimmePS(this.id)">Wetter</button>
+				<button class="presets3" id="pS3" onclick="gimmePS(this.id)">Allg</button>
 			
 				<input type="range" id="stadt_Atmosphaere" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Atmosphaere</p>	
@@ -133,12 +128,12 @@
 			</div>
 		</section>
 		<section class="one-fourth" id="land">
-			<button id="Button_Land" onclick="changeButton('Button_Land');div_hide_show('landKont')">Land</button>	
+			<button id="Button_Land" onclick="div_hide_show('landKont')">Land</button>	
 			<div id="landKont">
 				
-				<button class="presets1" id="pL1" onclick="gimmePS('pL1')">1</button>
-				<button class="presets2" id="pL2" onclick="gimmePS('pL2')">2</button>
-				<button class="presets3" id="pL3" onclick="gimmePS('pL3')">3</button>
+				<button class="presets1" id="pL1" onclick="gimmePS(this.id)">Instrumente</button>
+				<button class="presets2" id="pL2" onclick="gimmePS(this.id)">Wetter</button>
+				<button class="presets3" id="pL3" onclick="gimmePS(this.id)">Allg</button>
 				
 			
 				<input type="range" id="land_Atmosphaere" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
@@ -172,7 +167,7 @@
 			</div>
 		</section>
 		<section class="one-fourth" id="instrumental">
-			<button id="Button_Instrumental" onclick="changeButton('Button_Instrumental');div_hide_show('instrKont')">Instrumental</button>	
+			<button id="Button_Instrumental" onclick="div_hide_show('instrKont')">Instrumental</button>	
 			<div id="instrKont">
 		
 				
@@ -184,6 +179,23 @@
 				<p>Glockenspiel</p>	
 			</div>
 		</section>
-	
+		
+		<section class="one-fourth" id="wetter">
+			<button id="Button_Wetter" onclick="div_hide_show('wetterKont')">Wetter</button>
+			<div id="wetterKont">
+			
+			<input type="range" id="wetter_Regen-hart" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
+			<p>Regen-hart</p>
+			<input type="range" id="wetter_Regen-weich" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
+			<p>Regen-weich</p>
+			<input type="range" id="wetter_Gewitter" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
+			<p>Gewitter</p>
+			<input type="range" id="wetter_Sturm" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
+			<p>Sturm</p>
+			</div>
+		</section>
+		<section class="one-fourth" id="land">
+			<button id="Button_Reset" onclick="closeDivs();resetAll();">Reset</button>	
+		</section>
 		</body>
 </html>
