@@ -6,7 +6,7 @@ import paho.mqtt.client as mqtt
 class Client:
 
     # Constructor
-    def __init__(self, url, topic, mixer):
+    def __init__(self, url, topic, user, pw, mixer):
         self.url = url
         self.topic = topic
         self.mixer = mixer
@@ -14,6 +14,8 @@ class Client:
         client = mqtt.Client()
         client.on_connect = self.on_connect
         client.on_message = self.on_message
+        if (user and pw):
+            client.username_pw_set(user, password=pw)
         client.connect(url, 1883, 60)
         client.loop_forever()
 
