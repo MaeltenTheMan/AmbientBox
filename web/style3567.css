@@ -12,7 +12,7 @@
 }
 
 body{
-	background: #FFFFFF;
+	background: yellow;
 }
 
 /*
@@ -58,13 +58,14 @@ header{
 button{
 	font-family:Verdana, Geneva, sans-serif;
 	font-weight:bold;
-	background-color: yellow;
+	background-color: #848484;
 	font-size:45px;
 	border-radius: 25px 0px 25px 0px;
 	width: 100%;
 	height: 100px;
 	color: white;
 }
+
 
 button:hover{
 	font-size: 400%;
@@ -90,12 +91,21 @@ button:hover{
 	background: url(pics/wetter.jpg);
 }
 
-#Button_Reset{
+.Button_in_Div{
 	height: 50px;
-	width: 25%;
-	border-radius: 25px 0px 25px 0px;
+	width: 24.25%;
+	border-radius: 25px 25px 25px 25px;
 	font-size: 25px;
 	background-color: black;
+	position: relative;
+	margin-bottom: 2%;
+	margin-top:1%;
+	
+}
+
+.Button_in_Div:hover{
+	font-size: 28px;
+	
 }
 
 input{
@@ -103,12 +113,16 @@ input{
 	float:left;
 	margin-right: 2%;
 	margin-top:1%;	
+	clear:right-side;
+	
+	
 }
 
 p{
 	float: left;
 	margin-top:1%;
 	font-family:Verdana, Geneva, sans-serif;
+	margin-right: 10%;
 }
 
 /*
@@ -116,33 +130,39 @@ p{
 */
 .presets1, .presets2{
 	float:left;
-	width: 32.6%;
+	width: 24.25%;
 	height:50px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 25px 25px 25px 25px;
 	margin-top: 1%;
 	margin-bottom: 2%;
 	margin-right:1%;
-	font-size: 200%;
-}
-
-.presets1{
-	background-color: blue;
+	font-size: 25px;
 }
 
 .presets3{
 	float:left;
-	width: 32.6%;
+	width: 24.25%;
 	height:50px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 25px 25px 25px 25px;
 	margin-top: 1%;
 	margin-bottom: 2%;
-	background-color: red;
-	font-size: 200%;
+	background-color: #84848;
+/*	font-size: 200%;*/
+	font-size: 25px;
 }
 
 .presets1:hover, .presets2:hover, .presets3:hover{
-	font-size: 250%;
+	font-size: 28px;
 }
+
+
+#reset_wetter, #reset_instr{
+
+
+	margin-right: 90%;
+	text-align:center;
+}
+
 
 /*
 *
@@ -170,6 +190,8 @@ p{
 	margin-top:1%;
 }
 
+
+
 /*
 *
 *Media Query 768 px (Tablet/Handy)
@@ -189,10 +211,79 @@ p{
 	#wilkommenstext{
 	font-weight: 400;
 	font-size: 3.5em;
+	text-align:center
 	}
 	#uText{
-	font-size: 1.15em;
+	font-size: 1.5em;
 	font-weight: 200;
+	text-align:center;
+	}
+	header{
+		width:80%;
+		margin-left: 10%;
+	}
+	body{
+		background-color:blue;
 	}
 
+	button{
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	background-color: #848484;
+	font-size:35px;
+	border-radius: 25px 0px 25px 0px;
+	width: 100%;
+	height: 75px;
+	color: white;
+}
+button:hover{
+	font-size: 40px;
+}
+	
+}
+
+@media screen and(max-width:320px){
+	.one-fourth{
+	
+	width:100%;
+	float:left;
+	padding-bottom: 2.5%;
+	text-align:center;
+	margin-left: 5%;
+	background: #FFFFFF;
+	}
+	button{
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	background-color: #848484;
+	font-size:30px;
+	border-radius: 0px 0px 0px 0px;
+	width: 100%;
+	height: 65px;
+	color: white;
+}
+	button:hover{
+	font-size: 35px;
+}
+	header{
+		width:90%;
+		margin-left: 5%;
+	
+	}
+	
+	body{
+		background-color:red;
+	}
+	
+	#wilkommenstext{
+	font-weight: 300;
+	font-size: 3.5em;
+	text-align:center;
+	}
+	#uText{
+	font-size: 1.25em;
+	font-weight: 150;
+	text-align:center;
+	}
+	
 }

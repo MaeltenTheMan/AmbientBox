@@ -98,7 +98,7 @@ function resetAll(){
 		document.getElementById(Regler[i]).value = '0';
 		}
 		
-		pahoMessage("reset 1")
+		pahoMessage("reset")
 	
 }
 function pahoMessage(wert){
