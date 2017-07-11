@@ -249,7 +249,7 @@ p{
 	
 }
 
-@media screen and(max-width:320px){
+@media (orientation:portrait){
 	.one-fourth{
 	
 	width:100%;
