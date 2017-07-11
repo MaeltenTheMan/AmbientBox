@@ -157,20 +157,6 @@
 				
 			</div>
 		</section>
-		<section class="one-fourth" id="instrumental">
-			<button id="Button_Instrumental" onclick="div_hide_show('instrKont')">Instrumental</button>	
-			<div id="instrKont">
-				<button id="reset_instr" class="Button_in_Div" onclick="closeDivs();resetAll();">Löschen</button>
-				
-				<input type="range" id="instr_Gitarre" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
-				<p>Gitarre</p>	
-				<input type="range" id="instr_Hall" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
-				<p>Hall</p>	
-				<input type="range" id="instr_Glockenspiel" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
-				<p>Glockenspiel</p>	
-				
-			</div>
-		</section>
 		
 		<section class="one-fourth" id="wetter">
 			<button id="Button_Wetter" onclick="div_hide_show('wetterKont')">Wetter</button>
@@ -196,6 +182,13 @@
 		
 		<section class="one-fourth" id="reset">
 			<button id="loeschen"  onclick="closeDivs();resetAll();">Zur&#x00FC;cksetzen</button>	
+		</section>
+
+		<section class="one-fourth" id="instrumental">
+			<button id="Button_Instrumental" onclick="div_hide_show('instrKont')">Instrumental</button>	
+			<div id="instrKont">
+				<button id="reset_instr" class="Button_in_Div" onclick="closeDivs();resetAll();">Löschen</button>
+			</div>
 		</section>
 		
 		</body>
