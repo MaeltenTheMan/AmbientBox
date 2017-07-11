@@ -17,6 +17,7 @@ class Client:
         if (user and pw):
             client.username_pw_set(user, password=pw)
         client.connect(url, 1883, 60)
+        self.mixer.playjingle()
         client.loop_forever()
 
     # Called when client connects to server
@@ -31,6 +32,6 @@ class Client:
         print("\nReceived new message: " + payload)
         arguments = payload.split()
         if len(arguments) <= 2:
-            self.mixer.play(arguments)
+            self.mixer.playsound(arguments)
         else:
             print("Message invalid: Needs to contain exactly 1 or 2 arguemtents")

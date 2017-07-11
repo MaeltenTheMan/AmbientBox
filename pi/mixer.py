@@ -15,7 +15,7 @@ class Mixer:
     # Changes a sound to play in the given volume.
     # If the sound is not played yet, playback is started
     # If the volume is 0, playback will be stopped and the channel removed
-    def play(self, arguments):
+    def playsound(self, arguments):
         if len(arguments) == 1:
             if arguments[0].lower() == "reset":
                 reset()
@@ -73,3 +73,8 @@ class Mixer:
         print("Stopped playback of " + str(count) + " channels")
         self.channels.clear()
         print("All channels cleared. Reset complete")
+
+    def playjingle(self):
+        jingle = self.mixer.Sound("audio/jingle.wav")
+        print("Ready")
+        jingle.play()
