@@ -114,6 +114,7 @@ input{
 	margin-right: 2%;
 	margin-top:1%;	
 	clear:right-side;
+	position:  relative;
 	
 	
 }
@@ -122,7 +123,7 @@ p{
 	float: left;
 	margin-top:1%;
 	font-family:Verdana, Geneva, sans-serif;
-	margin-right: 25%;
+	
 }
 
 /*
