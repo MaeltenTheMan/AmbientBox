@@ -1,6 +1,6 @@
 //Global Array, der alle Reglernamen hält
-var Regler = ['wald_Atmosphaere', 'wald_Kuckuck', 'wald_Eule', 'wald_Specht', 'wald_Wolf','wald_Aeste', 'wald_Laub', 'wald_Fallobst', 'wald_Frosch', 'wald_See','wald_Tiergetrappel', 'wald_Tropfen', 'stadt_Atmosphaere', 'stadt_Markt', 'stadt_Fluglaerm','stadt_Verkehr', 'stadt_Passanten', 'stadt_Baustelle', 'stadt_Sirenen', 'stadt_Kirche', 'stadt_Autobahn', 'land_Atmosphaere', 'land_Grille', 'land_Katze', 'land_Wasser','land_Schweine', 'land_Kuehe', 'land_Kinder', 'land_Pferde', 'land_Hahn', 'land_Traktor','land_Bahnschranke', 'land_Kirche', 'land_Lagerfeuer','instr_Gitarre','instr_Hall','instr_Glockenspiel','wetter_Regen-hart','wetter_Regen-weich','wetter_Gewitter','wetter_Sturm'];  
-
+var Regler = ['wald_Atmosphaere', 'wald_Kuckuck', 'wald_Eule', 'wald_Specht', 'wald_Wolf','wald_Aeste', 'wald_Laub', 'wald_Fallobst', 'wald_Frosch', 'wald_See','wald_Tiergetrappel', 'wald_Tropfen', 'stadt_Atmosphaere', 'stadt_Markt', 'stadt_Fluglaerm','stadt_Verkehr', 'stadt_Passanten', 'stadt_Baustelle', 'stadt_Sirenen', 'stadt_Kirche', 'stadt_Autobahn', 'land_Atmosphaere', 'land_Grille', 'land_Katze', 'land_Wasser','land_Schweine', 'land_Kuehe', 'land_Kinder', 'land_Pferde', 'land_Hahn', 'land_Traktor','land_Bahnschranke', 'land_Kirche', 'land_Lagerfeuer','instr_Gitarre','instr_Hall','instr_Glockenspiel','wetter_Regen-hart','wetter_Regen-weich','wetter_Gewitter','wetter_Sturm',"wetter_Regen-ueberdacht"];  
+var ReglerNeu= ["wald_Atmosphaere","wald_Aeste","wald_Eule", "wald_Frosch", "wald_Hirsch","wald_Kuckuck","wald_Specht","wald_Unterholz", "wald_Wolf","stadt_Atmosphaere", "stadt_Autohupen", "stadt_Fluglaerm", "stadt_Gueterverkehr", "stadt_Kirchenglocken","stadt_Menschen", "stadt_Motorrad", "stadt_Sirenen", "land_Atmosphaere", "land_Gaense", "land_Grillen", "land_Hahn", "land_Katze", "land_Kirchenglocken", "land_Kuh", "land_Pferdewiehern", "land_Reiter", "land_Schweine","wetter_Sturm", "wetter_Donner", "wetter_Gewitter", "wetter_Gewitter-ueberdacht", "wetter_Regen-leicht", "wetter_Regen-stark", "wetter_Regen-ueberdacht"]
 
 /*
 *Ausklappbare divs
@@ -92,10 +92,10 @@ function gimmePS(id){
 }
 
 //schickt paho message + Alle Regler auf 0
-function resetAll(){
+function resetAll(los, endee){
 		
-		for (var i = 0; i <= Regler.length; i++){
-		document.getElementById(Regler[i]).value = '0';
+		for (var i = los; i <= endee; i++){
+		document.getElementById(ReglerNeu[i]).value = '0';
 		}
 		
 		pahoMessage("reset")

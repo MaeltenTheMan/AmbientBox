@@ -6,7 +6,7 @@
 		<title>Ambientbox</title>
 		<link rel="stylesheet" type="text/css" href="style3567.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
-		<script src="scripte12.js"></script>
+		<script src="scripte1012.js"></script>
 		<script src="mqttws31.js" type="text/javascript"></script>
 		<script type="text/javascript">
 		
@@ -112,7 +112,7 @@
 				<input type="range" id="stadt_Fluglaerm" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Flugl&#x00E4;rm</p>
 				<input type="range" id="stadt_Gueterverkehr" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
-				<p>G&#x00FC;terverkehr</p>
+				<p>Verkehr</p>
 				<input type="range" id="stadt_Kirchenglocken" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Kiche</p>
 				<input type="range" id="stadt_Menschen" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
@@ -178,7 +178,9 @@
 			<input type="range" id="wetter_Gewitter-ueberdacht" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 			<p>&#x00FC;berdacht</p>
 			<br />
-			<br /><br />
+			<br />
+			<br />
+			<br />
 			<br />
 			<h3>Regen</h3>
 			<br />
@@ -200,7 +202,7 @@
 		</section>
 
 		<section class="one-fourth" id="reset">
-			<button id="loeschen"  onclick="closeDivs();resetAll();">Zur&#x00FC;cksetzen</button>	
+			<button id="loeschen"  onclick="closeDivs();resetAll(0, 36);">Zur&#x00FC;cksetzen</button>	
 		</section>
 		
 		</body>
