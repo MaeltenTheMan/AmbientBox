@@ -12,7 +12,7 @@
 }
 
 body{
-	background: yellow;
+	background: #FFFFFF;
 }
 
 /*
@@ -122,7 +122,7 @@ p{
 	float: left;
 	margin-top:1%;
 	font-family:Verdana, Geneva, sans-serif;
-	margin-right: 50%;
+	margin-right: 25%;
 }
 
 /*
@@ -201,11 +201,11 @@ p{
 	
 	.one-fourth{
 	
-	width:90%;
+	width:80%;
 	float:left;
 	padding-bottom: 2.5%;
 	text-align:center;
-	margin-left: 5%;
+	margin-left: 10%;
 	background: #FFFFFF;
 	}
 	#wilkommenstext{
@@ -222,9 +222,7 @@ p{
 		width:80%;
 		margin-left: 10%;
 	}
-	body{
-		background-color:blue;
-	}
+	
 
 	button{
 	font-family:Verdana, Geneva, sans-serif;
@@ -251,20 +249,20 @@ p{
 
 @media (orientation:portrait){
 	.one-fourth{
-	
-	width:100%;
+	width:95%;
 	float:left;
 	padding-bottom: 2.5%;
 	text-align:center;
-	
 	background: #FFFFFF;
+	margin-left:2.5%;
 	}
+	
 	button{
 	font-family:Verdana, Geneva, sans-serif;
 	font-weight:300;
 	background-color: #848484;
 	font-size:30px;
-	border-radius: 0px 0px 0px 0px;
+	border-radius: 25px 0px 25px 0px;
 	width: 100%;
 	height: 65px;
 	color: white;
@@ -275,14 +273,13 @@ p{
 	
 	}
 	header{
-		width:100%;
-		
+		width:95%;
+		margin-left:2.5%;
 	
 	}
 	
-	body{
-		background-color:red;
-	}
+	
+	
 	
 	#wilkommenstext{
 	font-weight: 250;
@@ -304,8 +301,12 @@ p{
 	}
 	
 	#reset{
-		width:100%;
-		margin: 0;
+		width:95%;
+		margin: 2.5%;
+	}
+	
+	#loeschen{
+		width:70%;
 	}
 	
 }
