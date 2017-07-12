@@ -1,4 +1,4 @@
-import sched, time, pygame, threading
+import pygame, threading, time
 
 class NewMixer:
 

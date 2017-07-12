@@ -1,6 +1,5 @@
 # Mixer
-import pygame
-import os.path
+import os.path, pygame, threading, time
 
 class Mixer:
 
@@ -42,8 +41,23 @@ class Mixer:
                         newsound.set_volume(volume)
                         newsound.play(-1)
                         self.channels[sound] = newsound
+
+                        newsound = self.mixer.Sound(sound)
+                        newsound.set_volume(volume)
+                        self.channels[sound] = newsound
                         print("Created new channel for " + sound + " and set volume to " + str(volume))
+                        if (newsound.get_length() > 10):
+                            newsound.play(-1)
+                        else:
+                            self.repeatsound(sound)
     
+    def repeatsound(self, sound):
+        self.channels[sound].play(0)
+        timetowait = 10 - self.channels[sound].get_volume() * 10 + self.channels[sound].get_length()
+        print("\nPlaying " + sound + " again in " + str(timetowait))
+        t = threading.Timer(timetowait, self.repeatsound, [sound])
+        t.start()
+
     # Checks if a given filename exists as a .wav file
     def checkfile(self, filename):
         if not os.path.isfile(filename + ".wav"):
