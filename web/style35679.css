@@ -76,22 +76,38 @@ button:hover{
 
 #Button_Wald {
 	background: url(pics/image.jpg);
+	background-repeat: no-repeat;
+	background-position: 100%;
+	background-size: cover;
+	/*background-attachment: fixed;*/
 }
 
 #Button_Stadt {
 	background: url(pics/image-stadt.jpg);
+	background-repeat: no-repeat;
+	background-position: 100%;
+	background-size: cover;
 }
 
 #Button_Land {
 	background: url(pics/image-land.jpg);
+	background-repeat: no-repeat;
+	background-position: 100%;
+	background-size: cover;
 }
 
 #Button_Instrumental {
 	background: url(pics/image-instrumental.jpg);
+	background-repeat: no-repeat;
+	background-position: 100%;
+	background-size: cover;
 }
 
 #Button_Wetter {
 	background: url(pics/wetter.jpg);
+	background-repeat: no-repeat;
+	background-position: 100%;
+	background-size: cover;
 }
 
 .Button_in_Div{
