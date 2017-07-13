@@ -12,7 +12,7 @@
 		
 		// Create a client instance
 		var wsbroker = "diginet.mt.haw-hamburg.de";  //mqtt websocket enabled broker
-		var wsport = 8000 // port for above
+		var wsport = 80 // port for above
 		var client = new Paho.MQTT.Client(wsbroker, wsport,
 			"myclientid_" + parseInt(Math.random() * 100, 10));
 
@@ -123,7 +123,7 @@
 				<input type="range" id="stadt_Gueterverkehr" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Verkehr</p>
 				<input type="range" id="stadt_Kirchenglocken" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
-				<p>Kiche</p>
+				<p>Kirche</p>
 				<!--<input type="range" id="stadt_Menschen" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Menschen</p>-->
 				<input type="range" id="stadt_Motorrad" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
