@@ -12,10 +12,27 @@
 }
 
 body{
-	background: #FFFFFF;
+	background: white;
 }
 h3{
 	float:left;
+}
+
+input{
+	width: 50%;
+	float:right;
+	margin-right: 2%;
+	margin-top:1%;	
+	clear:right-side;
+	position: relative;
+}
+
+
+p{
+	float: left;
+	font-family:Verdana, Geneva, sans-serif;
+	margin-right: 15%;
+	margin-top:1%;	
 }
 
 /*
@@ -79,7 +96,6 @@ button:hover{
 	background-repeat: no-repeat;
 	background-position: 100%;
 	background-size: cover;
-	/*background-attachment: fixed;*/
 }
 
 #Button_Stadt {
@@ -127,23 +143,7 @@ button:hover{
 	
 }
 
-input{
-	width: 50%;
-	float:left;
-	margin-right: 2%;
-	margin-top:1%;	
-	clear:right-side;
-	position: relative;
-	
-	
-}
 
-p{
-	float: left;
-	margin-top:1%;
-	font-family:Verdana, Geneva, sans-serif;
-	margin-right: 15%;
-}
 
 /*
 *presets
@@ -167,7 +167,6 @@ p{
 	margin-top: 1%;
 	margin-bottom: 2%;
 	background-color: #84848;
-/*	font-size: 200%;*/
 	font-size: 25px;
 }
 
@@ -220,11 +219,9 @@ p{
 		}
 
 /*
-*
-*Media Query 768 px (Tablet/Handy)
-*
+*Handy Quer
 */
-@media screen and (max-width: 768px){
+@media screen and (orientation:landscape){
 	
 	.one-fourth{
 	
@@ -276,7 +273,20 @@ p{
 		font-size:32px;
 	}
 	
+	input{
+		margin-top:2%;
+	}
+	
+	p{
+		margin-right: 20%;
+	}
+	
 }
+
+
+/*
+*Handy Hochkant
+*/
 
 @media (orientation:portrait){
 	.one-fourth{
@@ -308,9 +318,6 @@ p{
 		margin-left:2.5%;
 	
 	}
-	
-	
-	
 	
 	#wilkommenstext{
 	font-weight: 250;
@@ -344,4 +351,11 @@ p{
 		font-size: 25px;
 		}
 	
+	p{
+		margin-top: 0.5%;
+	}
+	
+	input{
+		margin-top:2%;
+	}
 }

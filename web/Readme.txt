@@ -1,3 +1,5 @@
 Jingle: startSeq
-Reset: reset 1
+Reset: reset
 Restlichen sounds: übergruppe_Name volume
+
+
