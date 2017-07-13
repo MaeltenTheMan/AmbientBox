@@ -178,7 +178,7 @@ button:hover{
 #reset_wetter, #reset_instr{
 
 
-	margin-right: 90%;
+	margin-right: 75%;
 	text-align:center;
 }
 
@@ -215,7 +215,7 @@ button:hover{
 		border-radius: 25px;
 		height: 50px;
 		font-size:32px;
-		font-weight:200;
+		
 		}
 		
 #loeschen:hover{
@@ -253,6 +253,12 @@ button:hover{
 *Handy Quer
 */
 @media (min-width: 450px) and (max-width: 768px){
+	#reset_wetter, #reset_instr{
+
+
+	margin-right: 50%;
+	}
+	
 	
 	.one-fourth{
 	
@@ -323,6 +329,13 @@ button:hover{
 */
 
 @media(max-width: 450px){
+	
+	#reset_wetter, #reset_instr{
+
+
+	margin-right: 50%;
+	}
+	
 	.one-fourth{
 	width:95%;
 	float:left;
