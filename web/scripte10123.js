@@ -48,7 +48,7 @@ pahoMessage("reset");
 		document.getElementById('wetterKont').style.display = "block";	
 		
 		//Hier wird der helper aufgerufen, Max 8
-		hilfe("wetter_Gewitter" , 50, "wetter_Sturm", 60, "wetter_Regen-stark", 57, "instrumental_Abstrakt" ,59, "instrumental_Koto", 59 );
+		hilfe("wald_Atmosphaere", 25, "wetter_Gewitter" , 50, "wetter_Sturm", 60, "wetter_Regen-stark", 57, "instrumental_Abstrakt" ,59, "instrumental_Koto", 59 );
 		
 			
 	}
