@@ -41,6 +41,7 @@ class Mixer:
                     else:
                         newsound = self.mixer.Sound(sound)
                         newsound.set_volume(volume)
+
                         self.channels[sound] = newsound
                         print("Created new channel for " + sound + " and set volume to " + str(volume))
                         if (newsound.get_length() > 10):
