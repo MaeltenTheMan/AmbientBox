@@ -6,7 +6,7 @@
 *27-33 wetter
 *34-41 instrumente
 */
-var Regler = ["wald_Atmosphaere","wald_Aeste","wald_Eule", "wald_Frosch", "wald_Hirsch","wald_Kuckuck","wald_Specht","wald_Unterholz", "wald_Wolf","stadt_Atmosphaere", "stadt_Autohupen", "stadt_Fluglaerm", "stadt_Gueterverkehr", "stadt_Kirchenglocken","stadt_Menschen", "stadt_Motorrad", "stadt_Sirenen", "land_Atmosphaere", "land_Gaense", "land_Grillen", "land_Hahn", "land_Katze", "land_Kirchenglocken", "land_Kuh", "land_Pferdewiehern", "land_Reiter", "land_Schweine","wetter_Sturm", "wetter_Donner", "wetter_Gewitter", "wetter_Gewitter-ueberdacht", "wetter_Regen-leicht", "wetter_Regen-stark", "wetter_Regen-ueberdacht","instrumental_Abstrakt","instrumental_chimes_warm", "instrumental_Chor","instrumental_Horror","instrumental_Koto","instrumental_Percussions", "instrumental_Synth" ]
+var Regler = ["wald_Atmosphaere","wald_Aeste","wald_Eule", "wald_Frosch", "wald_Hirsch","wald_Kuckuck","wald_Specht","wald_Unterholz", "wald_Wolf","stadt_Atmosphaere", "stadt_Autohupen", "stadt_Fluglaerm", "stadt_Gueterverkehr", "stadt_Kirchenglocken", "stadt_Motorrad", "stadt_Sirenen", "land_Atmosphaere", "land_Gaense", "land_Grillen", "land_Hahn", "land_Katze", "land_Kirchenglocken", "land_Kuh", "land_Pferdewiehern", "land_Reiter", "land_Schweine","wetter_Sturm", "wetter_Donner", "wetter_Gewitter", "wetter_Gewitter-ueberdacht", "wetter_Regen-leicht", "wetter_Regen-stark", "wetter_Regen-ueberdacht","instrumental_Abstrakt","instrumental_chimes_warm", "instrumental_Chor","instrumental_Horror","instrumental_Koto","instrumental_Percussions", "instrumental_Synth" ]
 
 /*
 *
@@ -79,7 +79,7 @@ pahoMessage("reset");
 			document.getElementById('wetterKont').style.display = "block";
 			document.getElementById('instrKont').style.display = "block";	
 
-			hilfe("land_Atmosphaere", 20, "wetter_Sturm", 30, "instrumental_Horror", 10);
+			hilfe("land_Atmosphaere", 30, "wetter_Sturm", 30, "instrumental_Horror", 3);
 			
 	}
 	else if(id == "pS1"){
