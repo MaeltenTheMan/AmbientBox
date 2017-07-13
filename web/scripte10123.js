@@ -71,7 +71,7 @@ pahoMessage("reset");
 	else if(id == "pL2"){
 		//Wetter Reiter ausgeklappt
 		document.getElementById('wetterKont').style.display = "block";
-		hilfe("land_Atmosphaere", 30, "wetter_Donner", 25, "wetter_Regen-stark, 40);
+		hilfe("land_Atmosphaere", 30, "wetter_Donner", 25, "wetter_Regen-stark", 40);
 		
 		//hier werden die Regler verschoben
 	}
