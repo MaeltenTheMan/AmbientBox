@@ -45,50 +45,62 @@ pahoMessage("reset");
 		
 		//hier wird der Instrumentale Reiter ausgeklappt (Ausklappen der Reiter nicht vergessen!)
 		document.getElementById('instrKont').style.display = "block";	
-		
+		document.getElementById('wetterKont').style.display = "block";	
 		
 		//Hier wird der helper aufgerufen, Max 8
-		hilfe("wald_Atmosphaere" , 50, "wald_Eule", 80, "wald_Frosch", 40, "instrumental_Synth" , 100);
+		hilfe("wetter_Gewitter" , 50, "wetter_Sturm", 60, "wetter_Regen-stark", 57, "instrumental_Abstrakt" ,59, "instrumental_Koto", 59 );
 		
 			
 	}
 	else if(id == "pW2"){
 		//Wetter Reiter ausgeklappt
 		document.getElementById('wetterKont').style.display = "block";
-		
+		hilfe("wald_Atmosphaere", 25, "wald_Frosch", 75, "wetter_Regen-leicht", 40);
 		//hier werden die Regler verschoben
 	}
 	else if(id == "pW3"){
-		
+		hilfe("wald_Atmosphaere", 50, "wald_Wolf", 30);
 	}
 	else if(id == "pL1"){
 		//hier wird der Instrumentale Reiter ausgeklappt
 		document.getElementById('instrKont').style.display = "block";
 		
+		hilfe("land_Atmosphaere", 40, "land_Gaense", 40, "land_Kuh", 1);
 		//hier werden die Regler verschoben
 	}
 	else if(id == "pL2"){
 		//Wetter Reiter ausgeklappt
 		document.getElementById('wetterKont').style.display = "block";
+		hilfe("land_Atmosphaere", 30, "wetter_Donner", 25, "wetter_Regen-stark, 40);
 		
 		//hier werden die Regler verschoben
 	}
 	else if(id == "pL3"){
-		
+			document.getElementById('wetterKont').style.display = "block";
+			document.getElementById('instrKont').style.display = "block";	
+
+			hilfe("land_Atmosphaere", 20, "wetter_Sturm", 30, "instrumental_Horror", 10);
+			
 	}
 	else if(id == "pS1"){
 		//hier wird der Instrumentale Reiter ausgeklappt
-		document.getElementById('instrKont').style.display = "block";
+	
+		
+		hilfe("stadt_Atmosphaere", 30, "stadt_Motorrad", 30, "stadt_Sirenen", 3);
 		
 		//hier werden die Regler verschoben
 	}
 	else if(id == "pS2"){
 		//Wetter Reiter ausgeklappt
-		document.getElementById('wetterKont').style.display = "block";
+	
+		document.getElementById('wetterKont').style.display = "block";	
+		hilfe("stadt_Atmosphaere", 20, "stadt_Fluglaerm", 5);
 		
 		//hier werden die Regler verschoben
 	}
 	else if(id == "pS3"){
+		
+		hilfe("stadt_Atmosphaere", 20, "stadt_Verkehr", 50, "wetter_Regen-stark", 50);
 		
 	}
 }
