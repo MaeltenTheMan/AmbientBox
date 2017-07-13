@@ -190,7 +190,7 @@ function hilfe(Schieber, Wert, Schieber2 , Wert2, Schieber3, Wert3, Schieber4, W
 */
 function pahoMessage(wert){
 		message = new Paho.MQTT.Message(wert);
-        message.destinationName = "haw/dmi/mt/its/ss17/ambientbox";
+        message.destinationName = "ambientbox";
         client.send(message);
 }
 		

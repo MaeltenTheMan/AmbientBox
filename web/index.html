@@ -11,7 +11,7 @@
 		<script type="text/javascript">
 		
 		// Create a client instance
-		var wsbroker = "broker.mqttdashboard.com";  //mqtt websocket enabled broker
+		var wsbroker = "diginet.mt.haw-hamburg.de";  //mqtt websocket enabled broker
 		var wsport = 8000 // port for above
 		var client = new Paho.MQTT.Client(wsbroker, wsport,
 			"myclientid_" + parseInt(Math.random() * 100, 10));
@@ -24,15 +24,16 @@
 		console.log(message.destinationName, ' -- ', message.payloadString);
 		};
 		var options = {
+		userName:"haw", password: "schuh+-0",
 		timeout: 3,
 		onSuccess: function () {
         console.log("mqtt connected");
         // Connection succeeded; subscribe to our topic, you can add multile lines of these
-        client.subscribe('haw/dmi/mt/its/ss17/ambientbox', {qos: 1});
+        client.subscribe('ambientbox', {qos: 1});
     
         //use the below if you want to publish to a topic on connect
         message = new Paho.MQTT.Message("willkommen");
-        message.destinationName = "haw/dmi/mt/its/ss17/ambientbox";
+        message.destinationName = "ambientbox";
         client.send(message);
   
 		},
@@ -48,7 +49,7 @@
 		function sliderChange(value, id){
 		var send = id + " " + value;
 		message = new Paho.MQTT.Message(send);
-		message.destinationName = "haw/dmi/mt/its/ss17/ambientbox";
+		message.destinationName = "ambientbox";
 		client.send(message);
 		}
 			</script>
@@ -111,7 +112,7 @@
 				<button class="presets1" id="pS1" onclick="gimmePS(this.id)">Verkehr</button>
 				<button class="presets2" id="pS2" onclick="gimmePS(this.id)">Flieger</button>
 				<button class="presets3" id="pS3" onclick="gimmePS(this.id)">Regen</button>
-				<button  class="Button_in_Div" onclick="resetBlock(9,16)">Löschen</button>
+				<button  class="Button_in_Div" onclick="resetBlock(9,15)">Löschen</button>
 			
 				<input type="range" id="stadt_Atmosphaere" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Atmosph&#x00E4;re</p>
@@ -143,7 +144,7 @@
 				<button class="presets1" id="pL1" onclick="gimmePS(this.id)">Hof</button>
 				<button class="presets2" id="pL2" onclick="gimmePS(this.id)">Gewitter</button>
 				<button class="presets3" id="pL3" onclick="gimmePS(this.id)">Horror</button>
-				<button  class="Button_in_Div" onclick="resetBlock(17,26)">Löschen</button>
+				<button  class="Button_in_Div" onclick="resetBlock(16,25)">Löschen</button>
 				
 			
 				<input type="range" id="land_Atmosphaere" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
@@ -177,7 +178,7 @@
 			
 			<div id="wetterKont">
 			
-				<button id="reset_wetter" class="Button_in_Div" onclick="resetBlock(27,33)">Löschen</button>
+				<button id="reset_wetter" class="Button_in_Div" onclick="resetBlock(26,32)">Löschen</button>
 			
 				<input type="range" id="wetter_Sturm" min="0" max ="100" step="1" value="0" onChange="sliderChange(this.value, this.id)">
 				<p>Sturm</p>
