@@ -18,6 +18,8 @@ class Mixer:
         if len(arguments) == 1:
             if arguments[0].lower() == "reset":
                 reset()
+            else:
+                print("Message invalid: Not a recognized command")
         else:
             sound = "audio/" + arguments[0]
             volume = arguments[1]
@@ -32,16 +34,11 @@ class Mixer:
                         print("Stopped playback and removed " + sound + " from channels")
                     else:
                         print("Can't stop playback or remove " + sound + " from channels: Has no channel yet")
-                else: 
+                else:
                     if sound in self.channels:
                         self.channels[sound].set_volume(volume)
                         print("Changing the volume of channel " + sound + " to " + str(volume))
                     else:
-                        newsound = self.mixer.Sound(sound)
-                        newsound.set_volume(volume)
-                        newsound.play(-1)
-                        self.channels[sound] = newsound
-
                         newsound = self.mixer.Sound(sound)
                         newsound.set_volume(volume)
                         self.channels[sound] = newsound
