@@ -38,8 +38,8 @@ function div_hide_show(id){
 */
 function gimmePS(id){
 	
-//reset aller aktuellen sounds	
-pahoMessage("reset");
+	//reset aller aktuellen sounds	
+	pahoMessage("reset");
 	
 	if(id == "pW1"){
 		
@@ -112,11 +112,11 @@ pahoMessage("reset");
 */
 function resetAll()
 {
-		pahoMessage("reset");
-		for (var i = 0; i <= Regler.length; i++){
+	pahoMessage("reset");
+	for (var i = 0; i <= Regler.length; i++){
 		document.getElementById(Regler[i]).value = '0';
 		
-		}
+	}
 		
 }
 
@@ -137,7 +137,7 @@ function resetBlock(start , ende)
 *
 *Helper zum erstellen der Presets
 *Namen des Reglers + Wert eingeben
-*Maximal 8 unterschiedliche Werte einfügen (Nummern der Kategorien überm Array aufgelistet)
+*Maximal 8 unterschiedliche Werte/Sounds mischbar
 *
 */
 function hilfe(Schieber, Wert, Schieber2 , Wert2, Schieber3, Wert3, Schieber4, Wert4, Schieber5, Wert5, Schieber6, Wert6, Schieber7, Wert7, Schieber8, Wert8){
@@ -176,7 +176,7 @@ function hilfe(Schieber, Wert, Schieber2 , Wert2, Schieber3, Wert3, Schieber4, W
 			pahoMessage(Regler[i] + " " + Wert8);
 		}
 		else {
-		document.getElementById(Regler[i]).value = '0';
+			document.getElementById(Regler[i]).value = '0';
 		}
 	}
 	
@@ -194,7 +194,11 @@ function pahoMessage(wert){
         client.send(message);
 }
 		
-
+/*
+*Für den Resetbutton
+*
+*
+*/
 function closeDivs(){
 	if(document.getElementById('stadtKont').style.display == "block")
 	document.getElementById('stadtKont').style.display = "none";
