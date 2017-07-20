@@ -17,7 +17,7 @@ class Mixer:
     def playsound(self, arguments):
         if len(arguments) == 1:
             if arguments[0].lower() == "reset":
-                reset()
+                self.reset()
             else:
                 print("Message invalid: Not a recognized command")
         else:
@@ -41,17 +41,17 @@ class Mixer:
                     else:
                         newsound = self.mixer.Sound(sound)
                         newsound.set_volume(volume)
-
                         self.channels[sound] = newsound
                         print("Created new channel for " + sound + " and set volume to " + str(volume))
                         if (newsound.get_length() > 10):
                             newsound.play(-1)
                         else:
                             self.repeatsound(sound)
+                print("Number of channels playing: " + str(len(self.channels)))
     
     def repeatsound(self, sound):
         self.channels[sound].play(0)
-        timetowait = 10 - self.channels[sound].get_volume() * 10 + self.channels[sound].get_length()
+        timetowait = 30 - self.channels[sound].get_volume() * 30 + self.channels[sound].get_length()
         print("\nPlaying " + sound + " again in " + str(timetowait))
         t = threading.Timer(timetowait, self.repeatsound, [sound])
         t.start()
