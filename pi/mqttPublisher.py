@@ -23,13 +23,13 @@ class MQTTPublisher:
         self.url = url
         self.topic = topic
         client = mqtt.Client()
-		print("Client initialized")
+        print("Client initialized")
         client.on_connect = self.on_connect
         if (user or pw):
             client.username_pw_set(user, password=pw)
         client.connect(url, 1883, 60)
         while True:
-            message = raw_input()
+            message = input()
             client.publish(topic, payload=message, qos=0, retain=False)
 
     # Called when client connects to server

@@ -19,7 +19,8 @@ user = "haw"
 pw = "schuh+-0"
 
 # Mixer Settings
-loopThreshold = 10		# Sounds shorter than this (seconds) will not be looped nonstop but rather be played in intervals depending on the volume of the channel
+loopThreshold = 10	# Sounds shorter than this (seconds) will not be looped nonstop but rather be played in intervals depending on the volume of the channel
+maxLoopLength = 30	# Short sounds (see above) may be repeated at least every amount of seconds this is set to
 
-mixer = Mixer(loopThreshold)
+mixer = Mixer(loopThreshold, maxLoopLength)
 Client(url, topic, user, pw, mixer)
