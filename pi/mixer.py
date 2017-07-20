@@ -12,7 +12,7 @@ class Mixer:
         self.channels = dict()              	# Create Dictionary for connecting channel names to sound objects
         self.loopThreshold = loopThreshold      # Sounds shorter than this (seconds) will not be looped nonstop but rather be played in intervals depending on the volume of the channel
         self.maxLoopLength = maxLoopLength      # The maximum time it may take a short sound to repeat
-        #pygame.display.set_mode((200,100))   	# Only necessary to run on Windows. Stupid.
+        pygame.display.set_mode((200,100))   	# Only necessary to run on Windows. Stupid. If you're not running this on windows, you can comment this out.
         print("Mixer initialized")
     
     # Changes a sound to play in the given volume.
